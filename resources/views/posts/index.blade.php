@@ -26,18 +26,15 @@
                 <tr>
                     <td class="text-center">
                         @if($post->image)
-                        <img src="{{ asset('storage/' . $post->image) }}" class="rounded" style="width: 150px"
-                            alt="Post Image">
+                        <img src="{{ asset('storage/' . $post->image) }}" class="rounded" style="width: 150px" alt="Post Image">
                         @else
-                        <img src="{{ asset('images/254721151_utb_kotak.png') }}" class="rounded" style="width: 150px"
-                            alt="Post Image">
+                        <img src="{{ asset('images/254721151_utb_kotak.png') }}" class="rounded" style="width: 150px" alt="Post Image">
                         @endif
                     </td>
                     <td>{{ $post->title }}</td>
                     <td>{{ $post->content }}</td>
                     <td class="text-center">
-                        <form onsubmit="return confirm('Apakah Anda Yakin ?');"
-                            action="{{ route('posts.destroy', $post->id) }}" method="POST">
+                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('posts.destroy', $post->id) }}" method="POST">
                             <a href="{{ route('posts.view', $post->id)}}" class="btn btn-dark btn-sm">SHOW</a>
                             <a href="{{ route('posts.edit', $post->id)}}" class="btn btn-primary btn-sm">EDIT</a>
                             @csrf

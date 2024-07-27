@@ -9,8 +9,7 @@
     <div class="card-body">
         <h5 class="card-title">{{ $post->title }}</h5>
         @if($post->image)
-        <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid rounded mb-3" alt="Post Image"
-            style="max-width: 100%;">
+        <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid rounded mb-3" alt="Post Image" style="max-width: 100%;">
         @else
         <p class="card-text">No Image</p>
         @endif
